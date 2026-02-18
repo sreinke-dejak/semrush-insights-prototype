@@ -27,7 +27,7 @@ if uploaded_file:
         "Example: What prompts are we missing out on and what content should we create?"
     )
 
-      if st.button("Generate Insights"):
+    if st.button("Generate Insights"):
         if not openai_key:
             st.error("Please enter your OpenAI API key in the sidebar.")
         else:
@@ -36,3 +36,4 @@ if uploaded_file:
 
             st.header("📊 Insight Output")
             st.json(insight)
+
