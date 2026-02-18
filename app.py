@@ -27,7 +27,12 @@ if uploaded_file:
         "Example: What prompts are we missing out on and what content should we create?"
     )
 
-    if st.button("Generate Insights"):
+      if st.button("Generate Insights"):
         if not openai_key:
-st.error("Please enter your OpenAI API key in the sidebar.")
+            st.error("Please enter your OpenAI API key in the sidebar.")
+        else:
+            gaps = run_gap_analysis(df)
+            insight = generate_insight(openai_key, question, gaps)
 
+            st.header("📊 Insight Output")
+            st.json(insight)
