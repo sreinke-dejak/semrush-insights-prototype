@@ -29,4 +29,5 @@ if uploaded_file:
 
     if st.button("Generate Insights"):
         if not openai_key:
-            st.error("Please enter your OpenAI API key in the s
+st.error("Please enter your OpenAI API key in the sidebar.")
+
